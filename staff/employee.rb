@@ -1,27 +1,25 @@
-# employee_1 = ["Han", "Solo", 70000, true]
-# employee_2 = ["Lando", "Calrissian", 80000, true]
-# #local variable are always in snake case as seen in employee_1 and employee_2. Remember the difference btw local, global ($), instance (@) and class (@@) varaibles. Plus constants are in caps and defined at the top of the page. If you created a method, employee 1 and employee 2 would still not be accessible within the method cause they are local variables, just like the variables in the method are not accessible outhside the method. 
+module Actualize
+  class Employee
+  attr_reader :first_name, :last_name, :salary, :active
+  attr_writer :first_name, :last_name, :active
 
-# puts employee_1[0] + ' ' + employee_1[1] + " makes " + employee_1[2].to_s + " a year."
+  def initialize(input_options)
+    @first_name = input_options[:first_name]
+    @last_name = input_options[:last_name]
+    @salary = input_options[:salary]
+    @active = input_options[:active]
+  end
 
-# puts "#{employee_1[0]} #{employee_1[1]} makes #{employee_1[2]} a year."
+  def print_info
+    puts "#{ first_name } #{ last_name } makes #{ salary } a year."
+  end
 
-#to debug as a coder..use p as opposed to puts. 
+  def give_annual_raise
+    @salary = @salary * 1.05
+  end
 
-employee_1 = {"first_name" => "Han", "last_name" => "Solo", "salary" => 70000, "active" => true}
-
-puts "#{employee_1["first_name"]} #{employee_1["last_name"]} makes #{employee_1["salary"]} a year."
-
-#any objects can be keys within a hash..such as numbers or strings, like in the above example. 
-
-#if you have a symbol as a key but refer to it as a string, you will NOT break the code, but will get back a 'nil' value. See below:
-employee_1 = {:first_name => "Han", "last_name" => "Solo", "salary" => 70000, "active" => true}
-puts "#{employee_1["first_name"]} #{employee_1["last_name"]} makes #{employee_1["salary"]} a year."
-
-
-#but remember the current way to write a hash is as follows: 
-employee_1 = {first_name: "Han", last_name: "Solo", salary: 70000, active: true}
-puts "#{employee_1[:first_name]} #{employee_1[:last_name]} makes #{employee_1[:salary]} a year."
-
-
-
+  # def fire
+  #   @status = "fire"
+  # end
+  end
+end

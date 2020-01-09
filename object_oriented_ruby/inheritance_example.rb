@@ -19,8 +19,6 @@ def initialize
 end
 
 
-
-
 class Car < Vehicle
   attr_reader :fuel, :make, :model
   attr_writer :fuel, :make, :model
@@ -36,9 +34,6 @@ class Car < Vehicle
     puts "Beeeeeeep!"
   end
 end
-
-
-
 
 
 class Bike < Vehicle
@@ -61,7 +56,10 @@ p toyota = Car.new(fuel: "full",
                   model: "Camry")
 p toyota.accelerate
 p toyota.turn('south')
-p toyota.model = "Prius"
+ toyota.model = "Prius"
+ p toyota.model
+p toyota.fuel
+toyota.fuel = "empty"
 p toyota.fuel 
 toyota.honk_horn
 
