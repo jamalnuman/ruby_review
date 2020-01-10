@@ -15,7 +15,7 @@ module Actualize
   end
 
   def give_annual_raise
-    @salary = @salary * 1.05
+    @salary *= 1.05
   end
 
   # def fire

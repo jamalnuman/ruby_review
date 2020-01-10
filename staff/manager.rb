@@ -4,7 +4,7 @@ require_relative "./reportable.rb"
 module Actualize
     class Manager < Employee
     include Reportable
-    attr_reader :employees #can not add a writer method for salary, cause then that will only give u access to manager's salary only and not the employee's salary 
+    attr_reader :employees #can not add a writer method for salary, cause then that will only give u access to manager's salary only not the employee's salary 
 
     def initialize(input_options)
       super(input_options)
